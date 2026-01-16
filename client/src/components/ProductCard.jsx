@@ -5,6 +5,8 @@ import { FaStar } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
     const { currency, addToCart, removeFromCart, cartItems, navigate } = useAppContext();
+    const randomRatingCount = (Math.random() * (20 - 1) + 1).toFixed(1);
+    const randomRating = (Math.random() * (5 - 4) + 4).toFixed(1);
 
     return product && (
         <div onClick={() => { navigate(`/products/${product.category.toLowerCase()}/${product._id}`); scrollTo(0, 0) }}
@@ -15,10 +17,11 @@ const ProductCard = ({ product }) => {
             <div className="text-gray-500/60 text-sm">
                 <p>{product.category}</p>
                 <p className="text-gray-700 font-medium text-lg truncate w-full">{product.name}</p>
-                <div className="flex items-center gap-0.5">
-                   {Array(5).fill('').map((_, i) => (
-                        <FaStar key={i} className={`md:w-3.5 md:h-3.5 w-3 h-3 ${i < 4 ? "text-[#ff7a00]" : "text-gray-300" }`} /> ))}
-                    <p>(4)</p>
+                <div className="flex items-center gap-1 text-[#ff7a00]">
+                    <FaStar className="w-4 h-4" />
+                    <span className="text-sm font-medium">
+                      {randomRating} <span className="text-gray-500">({randomRatingCount}k)</span>
+                    </span>
                 </div>
                 <div className="flex items-end justify-between mt-3">
                     <p className="md:text-xl text-base font-medium text-primary">
