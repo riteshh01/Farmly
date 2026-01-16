@@ -3,7 +3,7 @@ import { assets, features } from '../assets/assets'
 
 const BottomBanner = () => {
   return (
-  <div className="relative w-full py-20 md:py-32 md:w-full overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 flex flex-col md:flex-row items-center justify-between rounded-3xl p-4 md:p-10 text-white mt-10">
+  <div className="relative w-full py-14 md:py-20 md:w-full overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 flex flex-col md:flex-row items-center justify-between rounded-3xl p-4 md:p-10 text-white mt-10 shadow-2xl shadow-black/20">
     <div className="absolute pointer-events-none top-10 -z-10 left-20 size-64 bg-gradient-to-br from-orange-400/60 to-orange-500/60 blur-[180px]"></div>
     <div className="absolute pointer-events-none bottom-10 -z-10 right-20 size-64 bg-gradient-to-br from-orange-400/60 to-orange-500/60 blur-[180px]"></div>
     <div className="flex flex-col items-center md:items-start max-md:text-center">
@@ -27,7 +27,7 @@ const BottomBanner = () => {
             </svg>
         </button>
     </div>
-    <div className="md:-mr-16 max-md:mt-10">
+    <div className="md:-ml-10 max-md:mt-10">
         <img src={assets.bottom_banner_image} alt='banner' className='w-full hidden md:block'/>
         <img src={assets.bottom_banner_image_sm} alt='banner' className='w-full md:hidden'/>
     </div>
