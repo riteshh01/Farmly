@@ -32,7 +32,8 @@ const Navbar = () => {
 
 
     return (
-        <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
+        <>
+        <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
 
             <div className="flex items-center gap-4">
                 <NavLink to='/' onClick={() => setOpen(false)} >
@@ -114,6 +115,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {open && (
                 <div className={`${open ? 'flex' : 'hidden'} absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden`}>
+                    <NavLink to="/seller/login" onClick={() => setOpen(false)}>Seller Login</NavLink>
                     <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
                     <NavLink to="/products" onClick={() => setOpen(false)} >All Product</NavLink>
 
@@ -140,6 +142,8 @@ const Navbar = () => {
             )}
 
         </nav>
+        <div className="h-[72px]"></div>
+        </>
     )
 }
 
