@@ -1,7 +1,7 @@
 import React from 'react'
-import { assets } from '../assets/assets';
 import { useAppContext } from '../context/AppContext';
 import { ShoppingCart } from 'lucide-react'
+import { FaStar } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
     const { currency, addToCart, removeFromCart, cartItems, navigate } = useAppContext();
@@ -16,9 +16,8 @@ const ProductCard = ({ product }) => {
                 <p>{product.category}</p>
                 <p className="text-gray-700 font-medium text-lg truncate w-full">{product.name}</p>
                 <div className="flex items-center gap-0.5">
-                    {Array(5).fill('').map((_, i) => (
-                        <img key={i} className="md:w-3.5 w-3" src={i < 4 ? assets.star_icon : assets.star_dull_icon} alt='' />
-                    ))}
+                   {Array(5).fill('').map((_, i) => (
+                        <FaStar key={i} className={`md:w-3.5 md:h-3.5 w-3 h-3 ${i < 4 ? "text-[#ff7a00]" : "text-gray-300" }`} /> ))}
                     <p>(4)</p>
                 </div>
                 <div className="flex items-end justify-between mt-3">
